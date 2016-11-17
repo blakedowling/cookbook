@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!-- Natalie Dowling's cookbook website -->
+<html lang="en-us">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Make What Yo Mamma Gave Ya</title>
+		
+		<link rel="stylesheet" type="text/css" href="cookbook.css">
+		
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+	
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<?php include "index.php";?>
+		
+		<header>
+			<h1>Make What Yo Momma Gave Ya</h1>
+			<p>Recipes for college kids trying to save some money</p>
+		</header>
+		
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span> 
+				  </button>
+				  <a class="navbar-brand" href="#" >Cookbook</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+				  <ul class="nav navbar-nav">
+				    <li><a href="home.html">Home</a></li>
+				    <li><a href="#">Breakfast</a></li>
+				    <li><a href="#">Everyday Meals</a></li> 
+				    <li><a href="#">Desserts</a></li>
+				    <li class="active"><a href="contact.html">Contact</a></li>
+				  </ul>
+				</div>
+			</div>
+		</nav>
+		
+		<div class="container">
+			<div class="row text-center" style="margin-bottom: 30px;">
+				<h1 class="page-header">Contact Me</h1>
+				<h3>Message me and I'll get back to you asap!</h3>
+			</div>
+			<div class="row">
+				<form class="form-horizontal" role="form" method="post" action="index.php">
+	            	<div class="form-group">
+	            		<label for="name" class="col-sm-4 control-label">Name</label>
+	            		<div class="col-sm-4">
+	            			<input type="text" class="form-control" id="name" name="name" placeholder="First & Last Name">
+	            			<span class="error"><?php echo $errName;?></span>
+	            		</div>
+	            	</div>
+	            	<div class="form-group">
+	            		<label for="email" class="col-sm-4 control-label">Email</label>
+	            		<div class="col-sm-4">
+	            			<input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" >
+	            			<span class="error"><?php echo $errEmail;?></span>
+	            		</div>
+	            	</div>
+	            	<div class="form-group">
+	            		<label for="subject" class="col-sm-4 control-label">Subject</label>
+	            		<div class="col-sm-4">
+	            			<input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
+	            		</div>
+	            	</div>
+	            	<div class="form-group">
+	            		<label for="message" class="col-sm-4 control-label">Message</label>
+	            		<div class="col-sm-4">
+	            			<textarea class="form-control" rows="4" name="message" placeholder="Enter message here"></textarea>
+	            			<span class="error"><?php echo $errMessage;?></span>
+	            		</div>
+	            	</div>
+	            	<div class="form-group">
+						<div class="col-sm-4 col-sm-offset-4">
+							<input id="submit" name="submit" type="submit" value="Send message" class="btn btn-primary btn-block" style="float:right">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-10 col-sm-offset-2">
+							<span class="error"><?php echo $result;?></span>	
+						</div>
+					</div>
+	            </form>
+            </div>
+		</div>
+		
+		<footer>
+			<span>Follow me on social media</span>
+			<a href="https://www.facebook.com/natalie.m.gibbs?fref=ts" target="_blank">
+				<img height="50px" src="images/facebook.png" alt="fb">
+			</a>
+			<a href="https://www.instagram.com/natalie.dowling/" target="_blank">
+				<img height="50px" src="images/instagram.png" alt="ig">
+			</a>
+			<a href="https://twitter.com/nataliegibbs/" target="_blank">
+				<img height="50px" src="images/twitter.png" alt="twitter">
+			</a>
+		</footer>
+		
+	</body>
+</html>

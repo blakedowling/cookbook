@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- Natalie Dowling's cookbook website -->
+<html lang="en-us">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Make What Yo Mamma Gave Ya</title>
+		
+		<link rel="stylesheet" type="text/css" href="cookbook.css">
+		
+		<link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
+	    <link href='https://fonts.googleapis.com/css?family=Roboto:500,300,700,400' rel='stylesheet' type='text/css'>
+	    <script src="node_modules/core-js/client/shim.min.js"></script>
+	    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+	    <!-- Modules -->
+	    <script src="js/app.js"></script>
+	
+	    <!-- Controllers -->
+	    <script src="js/controllers/MainController.js"></script>
+	</head>
+	<body ng-app="myApp">
+		
+		<header>
+			<h1>Make What Yo Momma Gave Ya</h1>
+			<p>Recipes for college kids trying to save some money</p>
+		</header>
+		
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span> 
+				  </button>
+				  <a class="navbar-brand active" href="#" >Cookbook</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+				  <ul class="nav navbar-nav">
+				    <li class="active"><a href="#">Home</a></li>
+				    <li><a href="#">Breakfast</a></li>
+				    <li><a href="#">Everyday Meals</a></li> 
+				    <li><a href="#">Desserts</a></li>
+				    <li><a href="contact.html">Contact</a></li>
+				  </ul>
+				</div>
+			</div>
+		</nav>
+		
+		<div class="container">
+			<div class="row text-center" style="margin-bottom: 30px;">
+				<h1 class="page-header">Desserts</h1>
+				<h3>Treat yo self</h3>
+			</div>
+			
+			<div ng-repeat="product in products" class="col-md-6">
+				<div class="thumbnail">
+					<img ng-src="{{ product.cover }}">
+					<p class="title">{{ product.name | uppercase }} </p>
+					<p class="price">{{ product.price | currency }} </p>
+					<p class="date">{{ product.pubdate | date }}</p>
+					<div class="rating">
+					  <p class="dislikes" ng-click="minusOne($index)">-{{ product.dislikes }} </p>
+					  <p class="likes" ng-click="plusOne($index)">+{{ product.likes }} </p>
+	               	</div>
+            	</div>
+        	</div>
+        </div>
+		<footer>
+			<span>Follow me on social media</span>
+			<a href="https://www.facebook.com/natalie.m.gibbs?fref=ts" target="_blank">
+				<img height="50px" src="images/facebook.png" alt="fb">
+			</a>
+			<a href="https://www.instagram.com/natalie.dowling/" target="_blank">
+				<img height="50px" src="images/instagram.png" alt="ig">
+			</a>
+			<a href="https://twitter.com/nataliegibbs/" target="_blank">
+				<img height="50px" src="images/twitter.png" alt="twitter">
+			</a>
+		</footer>
+	</body>
+</html>
